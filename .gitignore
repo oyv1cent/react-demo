@@ -1,1 +1,9 @@
+# IDE
 .idea
+
+# build
+dist
+
+# webpack
+node_modules
+package-lock.json
