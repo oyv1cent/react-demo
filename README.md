@@ -34,6 +34,14 @@ npm install react react-dom -S
 npm install babel-loader babel-core babel-preset-env babel-preset-react -D
 ```
 
+## install html-webpack-plugin
+
+```
+npm install html-webpack-plugin -D
+```
+
+html-webpack-plugin 为应用程序生成 HTML 一个文件，并自动注入所有生成的 bundle。
+
 
 
 
