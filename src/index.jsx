@@ -1,4 +1,4 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-ReactDOM.render(<div>test</div>, document.getElementById('root'));
+ReactDOM.render(<div>enable HRM</div>, document.getElementById('root'));

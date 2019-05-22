@@ -1,5 +1,5 @@
 const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin'); // 通过 npm 安装
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const isProd = process.env.NODE_ENV === 'production'
 
@@ -17,24 +17,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, '../dist'),
     filename: isProd ? 'js/[name].[hash:8].js' : 'js/[name].js',
-    publicPath: './'
   },
-  module: {
-    rules: [
-      {
-        test: /\.jsx?$/,
-        use: "babel-loader",
-        include: [path.join(__dirname, '../src')],
-      },
-    ]
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/index.html',
-      // inject: 'body'
-    }),
-    new webpack.HotModuleReplacementPlugin()
-  ],
   devServer: {
     port: '1314',
     stats: {
@@ -51,5 +34,21 @@ module.exports = {
     https: false,
     noInfo: false,
     open: true,
-  }
+  },
+  module: {
+    rules: [
+      {
+        test: /\.jsx?$/,
+        use: "babel-loader",
+        include: [path.join(__dirname, '../src')],
+      },
+    ]
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      inject: 'body',
+    }),
+    new webpack.HotModuleReplacementPlugin()
+  ]
 }
