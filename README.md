@@ -105,6 +105,42 @@ Add @babel/plugin-proposal-class-properties (https://git.io/vb4SL) to the 'plugi
 npm install webpack-merge -D
 ```
 
+## Scss
+
+引入css预处理器
+
+```
+npm install sass-loader css-loader style-loader node-sass -D
+```
+
+css-loader主要是解析 css 文件
+
+style-loader 主要是将 css 解析到 html页面 的 style 上
 
 
+
+## autoprefixer
+
+这个插件可以自动添加浏览器兼容前缀
+
+```
+npm install postcss-loader cssnano autoprefixer -D
+```
+
+## cross-env
+
+发现打包的时候有些配置未生效，检查发现是检测环境变量有问题
+
+```
+npm install cross-env -D
+```
+
+## image
+
+```
+npm file-loader url-loader -D
+```
+
+在webpack中引入图片需要依赖 url-loader
+引入文件需要依赖file-loader
 

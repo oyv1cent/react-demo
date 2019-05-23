@@ -1,13 +1,16 @@
 import { hot } from 'react-hot-loader/root'
 import React from "react"
-
+import img from '@/assets/5.jpeg'
 class App extends React.Component {
   test = () => {
     console.log(1)
   }
   render() {
     return (
-      <div onClick={this.test}>enable sHMR</div>
+      <>
+        <div className="test" onClick={this.test}>enable sHMR</div>
+        <img src={img}/>
+      </>
     )
   }
 }
