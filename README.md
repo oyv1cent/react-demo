@@ -42,6 +42,69 @@ npm install html-webpack-plugin -D
 
 html-webpack-plugin 为应用程序生成 HTML 一个文件，并自动注入所有生成的 bundle。
 
+## webpack-dev-server
+
+利用这个插件可以实现热替换，效果是，文件改动后会刷新页面。
+
+## react-hot-loader（提升）
+
+利用这个插件实现了热更新，效果是，文件改动后不刷新页面，只是局部替换。
+
+## babel 6 => babel 7
+
+将之前的babel6卸载了，替换为了babel7
+
+```
+npm install babel-loader @babel/core @babel/preset-env @babel/preset-react -D
+
+```
+
+## react and class
+
+```
+import { hot } from 'react-hot-loader/root'
+import React from "react"
+
+class App extends React.Component {
+  test = () => {
+    console.log(1)
+  }
+  render() {
+    return (
+      <div onClick={this.test}>enable sHMR</div>
+    )
+  }
+}
+
+export default hot(App)
+```
+
+报错信息：
+```
+ERROR in ./src/App.jsx
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /Users/ouyangyuqing/Desktop/react-demo/src/App.jsx: Support for the experimental syntax 'classProperties' isn't currently enabled (5:8):
+```
+
+从报错信息里的提示
+```
+Add @babel/plugin-proposal-class-properties (https://git.io/vb4SL) to the 'plugins' section of your Babel config to enable transformation.
+```
+
+安装@babel/plugin-proposal-class-properties， 解决。
+
+## webpack-merge
+
+事实上，开发环境与生产环境需要不一样的webpack config，来做一些差异化处理。
+
+比如对生产环境进行代码压缩等优化处理，在开发环境是不需要压缩代码的。
+
+所以可以利用webpack-merge，设置一个base来共用一些配置，设置dev和prod来差异化配置。
+
+```
+npm install webpack-merge -D
+```
+
 
 
 
