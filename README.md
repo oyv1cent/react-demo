@@ -82,7 +82,7 @@ export default hot(App)
 报错信息：
 ```
 ERROR in ./src/App.jsx
-Module build failed (from ./node_modules/babel-loader/lib/index.jsx):
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
 SyntaxError: /Users/ouyangyuqing/Desktop/react-demo/src/App.jsx: Support for the experimental syntax 'classProperties' isn't currently enabled (5:8):
 ```
 
