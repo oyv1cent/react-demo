@@ -82,7 +82,7 @@ export default hot(App)
 报错信息：
 ```
 ERROR in ./src/App.jsx
-Module build failed (from ./node_modules/babel-loader/lib/index.js):
+Module build failed (from ./node_modules/babel-loader/lib/index.jsx):
 SyntaxError: /Users/ouyangyuqing/Desktop/react-demo/src/App.jsx: Support for the experimental syntax 'classProperties' isn't currently enabled (5:8):
 ```
 
@@ -138,9 +138,16 @@ npm install cross-env -D
 ## image
 
 ```
-npm file-loader url-loader -D
+npm install file-loader url-loader -D
 ```
 
 在webpack中引入图片需要依赖 url-loader
 引入文件需要依赖file-loader
 
+## react-router-dom
+
+```
+npm install react-router-dom -S
+```
+
+引入router

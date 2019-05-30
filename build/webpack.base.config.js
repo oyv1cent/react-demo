@@ -9,7 +9,7 @@ module.exports = {
     alias: {
       '@': path.resolve(__dirname, '../src'),
     },
-    extensions: ['jsx', '.js', '.json'],
+    extensions: ['.jsx', '.js', '.json'],
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
