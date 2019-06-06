@@ -1,37 +1,37 @@
 import React from "react"
 import './index.scss'
+import { connect } from "react-redux"
+import { decrement, increment } from "@/redux/actions/countAction"
 
-export default class Count extends React.Component {
+const mapStateToProps = (state) => ({
+  count: state.count
+})
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      countNum: 0
-    }
-    console.log(this.state)
-  }
+const mapDispatchToProps = (dispatch) => ({
+  increment: num => dispatch(increment(num)),
+  decrement: num => dispatch(decrement(num))
+})
+
+class Count extends React.Component {
 
   handleAddCount = () => {
-    console.log(this.state)
-    this.setState({
-      countNum: this.state.countNum + 1
-    })
+    this.props.increment(2)
   }
 
   handleMinusCount = () => {
-    this.setState({
-      countNum: this.state.countNum - 1
-    })
+    this.props.decrement(2)
   }
 
   render() {
-    const { countNum } = this.state
+    const { count } = this.props
     return (
       <div className="count-wrap">
         <button onClick={this.handleAddCount}>+</button>
-        <span>{countNum}</span>
+        <span>{count}</span>
         <button onClick={this.handleMinusCount}>-</button>
       </div>
     )
   }
 }
+
+export default connect(mapStateToProps, mapDispatchToProps)(Count)
