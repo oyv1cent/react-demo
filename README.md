@@ -150,11 +150,14 @@ npm install file-loader url-loader -D
 npm install react-router-dom -S
 ```
 
-引入router
-
 ## react-redux
 
 ```
 npm install redux react-redux -S
 ```
 
+## redux-saga & axios
+
+```
+npm install axios redux-saga -S
+```

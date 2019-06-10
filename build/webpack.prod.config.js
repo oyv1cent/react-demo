@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const merge = require('webpack-merge');
 const baseWebpackConfig = require('./webpack.base.config.js');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -23,6 +24,9 @@ module.exports = merge(baseWebpackConfig, {
     new MiniCssExtractPlugin({
       filename: 'main.[contenthash].css',
       chunkFilename: '[id].[hash].css',
+    }),
+    new webpack.DefinePlugin({
+      BASE_URL: JSON.stringify('https://easy-mock.com/mock/5cf8b928e4047c4cd7831942/example'),
     }),
   ]
 });

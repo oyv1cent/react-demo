@@ -24,6 +24,9 @@ module.exports = merge(baseWebpackConfig, {
     open: true,
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.DefinePlugin({
+      BASE_URL: JSON.stringify('https://easy-mock.com/mock/5cf8b928e4047c4cd7831942/example'),
+    }),
   ]
 });
